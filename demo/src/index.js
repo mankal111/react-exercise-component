@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import { render } from 'react-dom';
 import { Exercise } from "../../src";
 
-export default class extends Component {
+class Demo extends Component {
     render() {
         return (
             <div style={{ width: 640, margin: "15px auto" }}>
@@ -19,3 +20,5 @@ export default class extends Component {
         );
     }
 }
+
+render(<Demo />, document.querySelector('#demo'));
