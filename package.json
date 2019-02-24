@@ -19,7 +19,10 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-katex": "^2.0.2",
+    "@material-ui/core": "^3.8.3"
+  },
   "peerDependencies": {
     "react": "16.x"
   },
