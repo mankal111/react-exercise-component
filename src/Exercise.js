@@ -6,7 +6,7 @@ import {InlineMath} from "react-katex"
 
 const styles = {
     root: {
-        maxWidth: 400,
+        maxWidth: 600,
         padding: 18
     },
     title: {
@@ -104,7 +104,7 @@ export class Exercise extends React.Component {
             <h2 className={classes.title}>{title}</h2>
             <div>{description}</div>
             <div>
-                {question.map(item => <InlineMath math={'\\text{' + item + '}'} />)}
+                {question.map(item => <div><InlineMath math={'\\text{' + item + '}'} /></div>)}
             </div>
             <div>
                 {answerComment.map((item, i) => <div key={i}>{item}</div>)}
