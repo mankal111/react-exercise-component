@@ -98,13 +98,19 @@ export class Exercise extends React.Component {
         this.resetInputFields();
     }
 
+    questionComponent(rawQuestion) {
+        const questionArray = rawQuestion.split('\n');
+        return <div>{questionArray.map(i => <div>{i}</div>)}</div>
+        //<div><InlineMath math={'\\text{' + item + '}'} /></div>
+    }
+
     render() {
         const { title, description, question, answerComment, classes } = this.props;
         return <Paper className={classes.root}>
             <h2 className={classes.title}>{title}</h2>
             <div>{description}</div>
             <div>
-                {question.map(item => <div><InlineMath math={'\\text{' + item + '}'} /></div>)}
+                {this.questionComponent(question)}
             </div>
             <div>
                 {answerComment.map((item, i) => <div key={i}>{item}</div>)}
