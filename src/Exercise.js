@@ -99,9 +99,16 @@ export class Exercise extends React.Component {
     }
 
     questionComponent(rawQuestion) {
-        const questionArray = rawQuestion.split('\n');
+        let questionArray = rawQuestion.split('\n');
+        questionArray = questionArray.map((line) => {
+            let parts = line.split(/\$/g).filter(i => i!='$');
+
+            for (var i = 1; i < parts.length; i += 2) {
+                parts[i] = <InlineMath key={i} math={parts[i]} />;
+            }
+            return parts;
+        })
         return <div>{questionArray.map(i => <div>{i}</div>)}</div>
-        //<div><InlineMath math={'\\text{' + item + '}'} /></div>
     }
 
     render() {
